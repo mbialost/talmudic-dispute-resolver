@@ -1,6 +1,6 @@
 /**
  * @file distribution.h
- * @brief Distribution management library for C.
+ * @brief Distribution management module library for calculating the distribution of a disputed resource.
  *
  * This library provides structures and functions for managing distributions 
  * in a system that involves concession, claimants, and distributions. 
@@ -15,7 +15,7 @@
  *
  * @author [Your Name]
  * @version [0.1]
- * @date [Date]
+ * @date [28-01-2024]
  */
 
 #ifndef DISTRIBUTION_H

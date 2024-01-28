@@ -16,7 +16,7 @@ Functions:
 
 import logging
 
-from talmudic_dispute_resolver.src.models.dispute_fraction import DisputeFraction as Fraction
+from src.models.dispute_fraction import DisputeFraction as Fraction
 from src.models.talit_claimant import TalitClaimant 
 from src.controllers.claimant_manager import ClaimantManager
 from src.controllers.dispute import Dispute

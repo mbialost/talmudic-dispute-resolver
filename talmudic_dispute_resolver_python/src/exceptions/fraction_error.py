@@ -2,8 +2,7 @@
 Module: fraction_error.py
 
 Description:
-- A custom exception class created to handle cases of invalid fractions in a dispute, 
-  particularly those outside the range of 0 to 1.
+- Custom exception classes created to handle errors related to fractions in a dispute. 
 """
 
 from fractions import Fraction

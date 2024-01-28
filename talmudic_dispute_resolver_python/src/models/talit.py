@@ -14,9 +14,9 @@ Dependencies:
 from dataclasses import dataclass
 import logging
 
-from talmudic_dispute_resolver.src.models.dispute_fraction import DisputeFraction as Fraction
-from talmudic_dispute_resolver.src.exceptions.fraction_error import FractionOperationError
-from talmudic_dispute_resolver.src.base.disputed_resource import DisputedResource
+from ..models.dispute_fraction import DisputeFraction as Fraction
+from ..exceptions.fraction_error import FractionOperationError
+from ..base.disputed_resource import DisputedResource
 
 
 logger = logging.getLogger(__name__)

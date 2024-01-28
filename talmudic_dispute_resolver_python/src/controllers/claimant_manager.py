@@ -9,11 +9,6 @@ Description:
 Classes:
     ClaimantManager: Manages the creation and handling of claimants in a dispute scenario. It includes key methods for categorizing claimants, distributing concessions, and resolving claims.
 
-Key Functionalities:
-- Creation of claimants from claims and categorization into full and partial claimants.
-- Distribution of concessions to claimants, ensuring fair and efficient allocation.
-- Dynamic management of claimants' statuses as their claims are resolved.
-
 Usage:
 - This class is intended to be used in conjunction with the 'Claimant' class and its subclasses, providing a streamlined process for managing the various aspects of dispute resolution involving claimants.
 
@@ -23,10 +18,8 @@ Note:
 
 from typing import Callable
 
-from talmudic_dispute_resolver.src.models.dispute_fraction import (
-    DisputeFraction as Fraction,
-)
-from talmudic_dispute_resolver.src.base.claimant import Claimant
+from ..models.dispute_fraction import DisputeFraction as Fraction
+from ..base.claimant import Claimant
 
 
 class ClaimantManager:

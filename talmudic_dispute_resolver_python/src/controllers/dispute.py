@@ -20,11 +20,9 @@ Note:
 
 import logging
 from dataclasses import dataclass
-from talmudic_dispute_resolver.src.models.dispute_fraction import (
-    DisputeFraction as Fraction,
-)
-from talmudic_dispute_resolver.src.base.disputed_resource import DisputedResource
-from talmudic_dispute_resolver.src.controllers.claimant_manager import ClaimantManager
+from ..models.dispute_fraction import DisputeFraction as Fraction
+from ..base.disputed_resource import DisputedResource
+from ..controllers.claimant_manager import ClaimantManager
 
 
 logger = logging.getLogger(__name__)

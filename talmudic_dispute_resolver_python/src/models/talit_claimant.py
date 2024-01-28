@@ -12,9 +12,8 @@ Dependencies:
 from dataclasses import dataclass
 import logging
 
-from talmudic_dispute_resolver.src.models.dispute_fraction import (
-    DisputeFraction as Fraction,
-)
+from ..models.dispute_fraction import DisputeFraction as Fraction
+
 from ..exceptions.fraction_error import FractionOperationError
 from ..base.claimant import Claimant
 

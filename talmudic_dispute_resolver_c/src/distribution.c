@@ -1,20 +1,51 @@
+/**
+ * @file distribution.c
+ * @brief Implementation of the Distribution calculation library for C.
+ *
+ * This module contains the definitions of functions declared in distribution.h.
+ * It focuses on calculating and managing the distribution of concessions among claimants.
+ * The functions in this module utilize the Fraction manipulation library to accurately handle
+ * fractional values during the distribution process, ensuring precise allocation of resources
+ * among different parties.
+ *
+ * @author [mbialost]
+ * @version [0.1]
+ * @date [28-01-2024]
+ */
+
 #include "distribution.h"
 
+/**
+ * Creates a new Distribution object based on the provided concession, partialsCount, and totalClaimants.
+ * The function calculates the distribution of a concession among claimants, considering both partial
+ * and full claimants. It determines the fraction of the concession that each type of claimant receives.
+ *
+ * @param concession The fraction of the total value being conceded.
+ * @param partialsCount The count of claimants with partial claims.
+ * @param totalClaimants The total number of claimants.
+ * @return A Distribution structure representing the calculated distribution of the concession.
+ */
 Distribution newDistribution(Fraction concession, int partialsCount, int totalClaimants)
 {
+    // Calculate the count of full claimants.
     int fullsCount = totalClaimants - partialsCount;
 
-    // Divide the concession between all claimants other than the conceder.
+    // Calculate the fraction of the concession allocated to each claimant excluding the conceder.
     Fraction perClaimantFraction = divideByInt(concession, totalClaimants - 1);
 
-    // Partial claimants each split their perClaimantFraction with all full claimants.
+    // Determine the fraction of the concession that partial claimants share with full claimants.
     Fraction splitWithFulls = divideByInt(perClaimantFraction, fullsCount + 1);
 
-    // Fulls recieve both the perClaimantFraction, and a splitWithFulls portion from each partial.
+    // Calculate the total fraction of the concession received by full claimants.
     Fraction totalForFulls = add(perClaimantFraction, multiplyByInt(splitWithFulls, partialsCount));
     return (Distribution){concession, perClaimantFraction, splitWithFulls, totalForFulls};
 }
 
+/**
+ * Prints the details of a Distribution object.
+ * 
+ * @param distribution A pointer to the Distribution object to be printed.
+ */
 void printDistribution(Distribution *distribution)
 {
     printf("\nDistribution for concession of ");
@@ -26,17 +57,3 @@ void printDistribution(Distribution *distribution)
     printf("  - Total for fulls: ");
     printFraction(distribution->totalForFulls);
 }
-
-// Python implementation:
-
-// @dataclass
-// class Distribution:
-//     concession: Fraction
-//     partials_count: int
-//     total_claimant_count: int
-
-//     def __post_init__(self) -> None:
-//         fulls_count = self.total_claimant_count- self.partials_count
-//         self.per_claimant_fraction = self.concession / (self.total_claimant_count - 1)
-//         self.split_with_fulls = self.per_claimant_fraction / (fulls_count + 1)
-//         self.for_fulls = self.per_claimant_fraction + (self.partials_count * self.split_with_fulls)

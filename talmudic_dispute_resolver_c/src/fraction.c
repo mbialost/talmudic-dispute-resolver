@@ -1,10 +1,16 @@
-/*
- * Fraction Operations Library
- * Provides basic arithmetic operations for fractions, including addition, subtraction,
- * multiplication, and division, along with utility functions for simplification and comparison.
- * Author: Your Name
- * Date: YYYY-MM-DD
+/**
+ * @file fraction.c
+ * @brief Implementation of the Fraction manipulation library for C.
+ *
+ * This module contains the definitions of functions declared in fraction.h.
+ * It includes the implementation of arithmetic operations, utility functions,
+ * and other functionalities related to fractions.
+ *
+ * @author [mbialost]
+ * @version [0.1]
+ * @date [28-01-2024]
  */
+
 #include <stdlib.h>
 #include "fraction.h"
 
@@ -108,20 +114,3 @@ void printFraction(Fraction fraction)
 {
     printf("%d/%d\n", fraction.numerator, fraction.denominator);
 }
-
-// void main() {
-//     Fraction f1 = createFraction(1, 2);
-//     Fraction f2 = createFraction(3, 4);
-//     Fraction result1 = add(f1, f2);
-//     printf("Addition:");
-//     printFraction(result1);
-//     Fraction result2 = subtract(f1, f2);
-//     printf("Sub:");
-//     printFraction(result2);
-//     Fraction result3 = multiply(f1, f2);
-//     printf("Mul:");
-//     printFraction(result3);
-//     Fraction result4 = divide(f1, f2);
-//     printf("Div:");
-//     printFraction(result4);
-// }

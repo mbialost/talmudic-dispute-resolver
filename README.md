@@ -23,4 +23,7 @@ Currently, the respository is in its initial stages. As a result, it currently i
 - **Algorithm Implementation**: Code written in Python and C.
 - **Documentation**: Comprehensive details regarding the Talmudic Fair Division Problem.
 
+## License
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
 ---
